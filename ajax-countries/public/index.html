@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="ajax">
+  <head>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </head>
+
+  <body ng-controller="ajaxCtrl as aj">
+    <h1>Ajax Countries!!</h1>
+    <input type="text" ng-model="aj.country" placeholder="Enter a country"></input>
+    <button ng-click="aj.getCountry()">Search</button><br>
+    <button ng-click="aj.getCountries()">Load Countries</button>
+    <ul>
+      <li ng-repeat="country in aj.countries">{{ country.name }}</li>
+    </ul>
+  </body>
+</html>
