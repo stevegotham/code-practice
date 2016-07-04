@@ -14,10 +14,10 @@ app.use(express.static(__dirname + '/public'));
 app.get('/countries', function(req, res) {
   res.json(countries)
 });
-app.post('/search', function(req, res) {
+app.get('/search', function(req, res) {
   var result;
   for (var i=0; i<countries.length; i++) {
-    if(countries[i].name == req.body.country) {
+    if(countries[i].name == req.query.country) {
       result = countries[i];
     }
   }

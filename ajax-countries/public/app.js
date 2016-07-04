@@ -14,7 +14,7 @@
         });
       }
       aj.getCountry = function() {
-        $http.post('/search',{country: aj.country}).then(function(res) {
+        $http.get('/search?country='+aj.country).then(function(res) {
           console.log(res)
           aj.countries = [];
           aj.countries.push(res.data)
